@@ -85,7 +85,7 @@ npm run pack
 - App ID: `qq.album.download`
 - Product name: `QQGroupAlbumDownload`
 - Windows target: `portable`
-- Icon: `logo.ico`
+- Icon: `logo.ico` (Windows), `logo_512.png` (macOS 512×512 minimum)
 
 ### TypeScript & ESLint
 - TypeScript config: `tsconfig.json`
