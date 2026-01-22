@@ -14,6 +14,9 @@
         "portable"
       ],
       "artifactName": "${productName} ${version}.${ext}"
+    },
+    "mac": {
+      "icon": "logo_512.png"
     }
   },
   "private": true,
