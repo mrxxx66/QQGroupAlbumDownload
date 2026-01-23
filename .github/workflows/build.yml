@@ -32,7 +32,23 @@ jobs:
           path: ~/.npm
           key: npm-${{ hashFiles('package-lock.json') }}
           restore-keys: npm-
-
+      
+      - name: Cache Electron binaries (macOS)
+        if: matrix.os == 'macos-latest'
+        uses: actions/cache@v4
+        with:
+          path: ~/Library/Caches/electron
+          key: electron-macos-${{ hashFiles('package.json') }}
+          restore-keys: electron-macos-
+          
+      - name: Cache Electron binaries (Windows)
+        if: matrix.os == 'windows-latest'
+        uses: actions/cache@v4
+        with:
+          path: ~/AppData/Local/electron/Cache
+          key: electron-windows-${{ hashFiles('package.json') }}
+          restore-keys: electron-windows-
+      
       - name: Install Dependencies
         run: |
           npm ci --legacy-peer-deps
