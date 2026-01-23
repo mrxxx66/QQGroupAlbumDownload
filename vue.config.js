@@ -42,15 +42,5 @@ module.exports = defineConfig({
         }
       }
     });
-    
-    // 为第三方库启用懒加载
-    config.plugin('preload').tap(options => {
-      options[0] = {
-        ...options[0],
-        include: 'initial',
-        fileBlacklist: [/\.map$/, /hot-update\.js$/]
-      };
-      return options;
-    });
   }
 });
