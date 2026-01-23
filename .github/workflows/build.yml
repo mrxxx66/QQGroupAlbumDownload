@@ -14,7 +14,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [windows-latest]
+        os: [windows-latest,macos-latest]
 
     steps:
       - name: Check out git repository
@@ -41,6 +41,8 @@ jobs:
 
       - name: Build Electron App
         run: npm run build && npm run pack
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Cleanup Artifacts
         shell: pwsh

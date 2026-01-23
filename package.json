@@ -16,7 +16,11 @@
       "artifactName": "${productName} ${version}.${ext}"
     },
     "mac": {
-      "icon": "logo_512.png"
+      "icon": "logo_512.png",
+      "target": [
+        "dmg"
+      ],
+      "artifactName": "${productName} ${version}.${ext}"
     }
   },
   "private": true,
