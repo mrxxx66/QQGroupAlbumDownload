@@ -11,11 +11,13 @@ module.exports = defineConfig({
     plugins: [
       AutoImport({
         resolvers: [ElementPlusResolver()],
+        // 只导入使用的API，减少包大小
+        imports: ['vue', 'vue-router']
       }),
       Components({
-        resolvers: [ElementPlusResolver()],
-      }),
-    ],
+        resolvers: [ElementPlusResolver()]
+      })
+    ]
   },
   chainWebpack(config) {
     // 代码分割，按需加载
